@@ -1,0 +1,18 @@
+<%- include("../partials/header.ejs") %>
+    <div class="container">
+        <% for(let cohort of cohorts) { %>
+            <div class="card">
+                <div class="card-body">
+                      <a href="/cohorts/<%= cohort.id %>"><h5 class="card-title"><%= cohort.title %> </h5></a>
+                    <p class="card-subtitle mb-2 text-muted"><%= cohort.members %> </p>
+                </div>
+                <div class="d-flex">
+                    <form method="POST" action="/cohorts/ <%= cohort.id %>">
+                        <input type="hidden" name="_method" value="DELETE" />
+                        <input type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-outline-danger" />
+                    </form>
+                </div>
+            </div>
+        <% } %>
+    </div>
+<%- include("../partials/footer.ejs") %>
