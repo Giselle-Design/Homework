@@ -1,0 +1,24 @@
+<%- include("../partials/header.ejs") %>
+    <div class="container">
+        <h1>New Cohort</h1>
+        <form action="/cohorts" method="POST">
+            <div class="form-group">
+              Logo URL
+                <input type="text" name="logo" class="form-control" />
+            </div>
+
+            <div class="form-group">
+              Name
+                <input type="text" name="title" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                Members
+                <input type="text" name="members" class="form-control" />
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Submmit</button>
+        </form>
+    </div>
+<%- include("../partials/footer.ejs") %>
